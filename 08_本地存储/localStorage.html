@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorage</title>
+</head>
+<body>
+    <h2>localStorage</h2>
+    <button onclick="saveData()">点击存储一个数据</button>
+    <button onclick="readData()">点击读取一个数据</button>
+    <button onclick="deleteData()">点击删除一个数据</button>
+    <button onclick="deleteDataAll()">点击删除所有数据</button>
+</body>
+<script>
+    let p = {name:'张三',age:18}
+    function saveData(){
+        localStorage.setItem('msg','你好啊！')
+        //只能存字符串，数值18会被转换成字符串18
+        localStorage.setItem('number',18)
+        //JSON.stringify 可以将一个对象转换成字符串
+        localStorage.setItem('person',JSON.stringify(p))
+    }
+    function readData(){
+       console.log(localStorage.getItem('msg'))
+       console.log(localStorage.getItem('number'))
+        const result = localStorage.getItem('person')
+        console.log(JSON.parse(result));
+    }
+    function deleteData(){
+      localStorage.removeItem('number')
+    }
+    function deleteDataAll(){
+      localStorage.clear()
+    }
+</script>
+</html>
