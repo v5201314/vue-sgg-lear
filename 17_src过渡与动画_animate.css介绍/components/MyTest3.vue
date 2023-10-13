@@ -2,6 +2,8 @@
   <div>
     <button @click="isShow = !isShow">显示/隐藏</button>
     <!-- name 决定播放哪一组动画 appear 决定首次登场播不播放动画-->
+    <!-- 一个动画标签用  transition -->
+    <!-- 多个相同的动画标签用  transition-group包裹 并且要配置key  -->
     <transition-group 
     name="animate__animated animate__bounce" 
     appear

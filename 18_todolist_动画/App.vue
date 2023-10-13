@@ -58,6 +58,7 @@ export default {
       this.todos = this.todos.filter((todo)=>{
         return todo.done===false
       })
+      console.log('kkk');
     },
     //更新数据
     updateTodo(id,data){
